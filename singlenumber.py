@@ -40,7 +40,14 @@ class Solution:
         for num, freq in freq_dict.items():
             if freq == 1:
                 return num
+'''
+Time Complexity: 
 
+O(n), where 𝑛
+n is the number of elements in the array. We traverse the array once to populate the dictionary and once more to find the single number.
+Space Complexity: 
+O(n) in the worst case if all elements are distinct and stored in the dictionary.
+'''
 
 '''
 def singlenumber(nums):
