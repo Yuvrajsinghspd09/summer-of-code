@@ -1,3 +1,12 @@
+'''
+Time Complexity: The time complexity of this approach is 
+O(n), where 𝑛
+n is the number of nodes in the tree. Each node is processed once, and for each node, constant-time operations are performed.
+Space Complexity: The space complexity is also 
+O(n) in the worst case, where all nodes are stored in the queue simultaneously during the traversal.
+'''
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
