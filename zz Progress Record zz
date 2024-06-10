@@ -1,5 +1,5 @@
-Revision List :
 Date --> 8-6-24
+Revision List :
 
 singlenumber.py
 topKFrequentWord.py
@@ -9,9 +9,8 @@ union.py
 
 
 
-
-Questions Solved List :
 Date --> 8-6-24 
+Questions Solved List :
 
 "Binary_Search" 
 "Minimum element in BST"
@@ -19,8 +18,8 @@ Date --> 8-6-24
 "IsBST_Traversal"
 "Floor in a Sorted Array"
 
-Date --> 9-6-24
 
+Date --> 9-6-24
 Questions Solved List :
 
 "Floor in BST"
@@ -35,3 +34,11 @@ Date --> 9-6-24
 
 Revision List :
 bfs
+
+
+Date --> 10-6-24
+Questions Solved List :
+
+"Print adjacency list" 
+"Number of Connected Components in an Undirected Graph" 
+"Graph and Vertices" 
