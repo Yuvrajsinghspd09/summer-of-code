@@ -67,7 +67,7 @@ MaxConsecutiveOnes.py
 MaxDepthOfBinaryTree.py
 
 
-Date --> 11-6-24
+Date --> 12-6-24
 Questions Solved List :
 
 "01 Matrix"
@@ -80,3 +80,16 @@ Revision List :
 DFS
 BFS
 
+Date --> 13-6-24
+Questions Solved List :
+
+"All Divisors of a Number"
+"countprimes" 
+
+Date --> 13-6-24
+Revision List :
+
+CapitalizeWords.py
+CheckifArrayIsSortedandRotated.py
+CountOcurrenceOfAChar.py
+CountVowels.py
