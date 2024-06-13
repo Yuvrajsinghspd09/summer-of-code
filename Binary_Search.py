@@ -58,3 +58,57 @@ if __name__ == "__main__":
     else:
         print(f"Element {target} not found in the array")
 
+
+
+
+def binary_search_practice1(array,target):
+    if array="":
+        return "empty array"
+    left=0
+    right=len(array)-1
+
+    while left<=right:
+        mid = (left+right)//2
+        if target == array[mid]:
+            return mid
+        elif target>array[mid]:
+            left=mid+1
+        else:
+            right= mid-1
+
+return -1
+
+
+def binary_search_practice2(array,target):
+    if array="":
+        return "empty array"
+    left = 0
+    right=len(array)-1
+    while left<=right:
+        mid=(left+right)//2:
+
+        if array[mid]==target:
+            return mid
+        elif array[mid]>target:
+            right=mid-1
+        else:
+            left=mid+1
+
+   return -1
+
+
+def binary_search_practice_recursive1(array,target,left,right):
+    if left>right:
+        return -1
+
+    mid = (left+right)//2
+    if array[mid]==target:
+        return mid
+    elif array[mid]>target:
+        return binary_search_practice_recursive1(array,target,left,mid-1)
+    else:
+        return binary_search_practice_recursive1(array,target,mid+1,right)
+
+def binary_search(array,target):
+    return binary_search_practice_recursive1(array,target,0,len(array)-1)
+        
