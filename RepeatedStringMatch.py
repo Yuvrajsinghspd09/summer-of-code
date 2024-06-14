@@ -19,3 +19,29 @@ class Solution:
             return count + 1
 
         return -1
+
+
+# practice attempt 1
+def repeated_sub_match(a,b):
+    count = (len(b)+len(a)-1)//len(a)
+    repeated_a=a*count
+    if b in repeated a:
+        count+=1
+
+    repeated_a+=a
+    if b in repeated_a:
+        count+=1
+
+    return -1
+#practice attempt 2
+    def repeat_sub_match(a,b):
+    count = (len(b)+len(a)-1)//len(a)
+    repeated_a=a*count
+    if b in repeated_a:
+        count+=1
+
+    repeated_a+=a
+    if b in repeated_a:
+        count+=1
+
+    return -1
