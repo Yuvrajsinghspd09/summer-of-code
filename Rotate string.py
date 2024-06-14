@@ -23,3 +23,11 @@ O(n) additional space.
 Therefore, the space complexity is O(n).
 
 '''
+# practice attempt 1
+def rotate_string(s,goal):
+    if len(s)!=len(goal):
+        return False
+    combined = s+s
+    return goal in combined:
+        
+    
