@@ -38,3 +38,32 @@ def climbstairs(n):
             memo[i]=helper_func(i-1)+helper_func(i-2)
         return memo[i]
     return helper_func(n)
+
+
+#practice attempt 2
+def climb_stairs(num):
+    if num<=1:
+        return 1
+
+    dp = [0]*(num+1)
+    dp[0]=1
+    dp[1]=1
+
+    for i in range(2,num+1):
+        dp[num]=dp[num-1]+dp[num-2]
+
+    return dp[num]
+
+
+#practice attempt 3
+def rec_climb_stairs(n):
+    memo= [-1]*[n+1]
+        return 1
+    def helper_func(i):
+        if n<=1:
+            return 1
+        elif memo[i]==-1:
+            memo[i]=memo[i-1]+memo[i-2]
+
+        return memo[i]
+    return helper_func(n)
