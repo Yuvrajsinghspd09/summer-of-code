@@ -41,3 +41,10 @@ def top_down(n,dp={0:0,1:1}):
     dp[n]= (top_down(n-1,dp)+top_down(n-2,dp))%MOD
     return dp[n]
 
+#practice attempt 2
+def top_down(n,dp={0:0,1:1}:
+    MOD=10**9+7
+    if n in dp:
+        return dp[n]
+    dp[n]= (top_down(n-1,dp)+top_down(n-2,dp))%MOD
+    return dp[n]
