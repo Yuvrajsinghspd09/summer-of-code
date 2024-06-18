@@ -20,3 +20,12 @@ class Solution:
         if num % 10 == 0:
             return False
         return True
+
+
+#practice attempt 1
+def double_rev(num):
+    if num==0:
+        return True
+    if num%10==0:
+        return False
+    return True
