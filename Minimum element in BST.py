@@ -25,3 +25,18 @@ def minValue(root):
     
     # Return the value of the leftmost leaf node
     return root.val
+
+
+# practice attempt 1
+class TreeNode:
+ def __init__(self,val=0,left=None,right=None):
+   self.val=val
+   self.left=left
+   self.right= right
+
+def minValue(root):
+  if root is None:
+    return -1
+   while root.left is not None:
+     root= root.left
+ return root.val
