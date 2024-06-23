@@ -6,3 +6,8 @@ def capitalize_words(s):
 # Test the function
 input_str = "hello world"
 print(capitalize_words(input_str))  # Output: "Hello World"
+
+def cap_words(sentence):
+    words = sentence.split()
+    cap_words= [ words.capitalize() for words in sentence]
+    return ''.join(cap_words)
