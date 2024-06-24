@@ -15,7 +15,7 @@ def find_divisors(N):
         divisors.sort()
         print(" ".join(map(str, divisors)))
         
-    #The line print(" ".join(map(str, divisors))) is a compact and efficient way to convert a list of integers into a single string 
+    ##The line print(" ".join(map(str, divisors))) is a compact and efficient way to convert a list of integers into a single string 
     # where each integer is separated by a space, and then print that string. 
  # practice attempt 1
  def find_all_div(num):
