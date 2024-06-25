@@ -1,4 +1,4 @@
-#Optimized one with O(n)
+##Optimized one with O(n)
 def maxProfit(prices):
     if not prices or len(prices) == 1:
         return 0
