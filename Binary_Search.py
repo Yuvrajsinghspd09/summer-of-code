@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
 
 def binary_search_practice1(array,target):
-    if array="":
+    if array=="":
         return "empty array"
     left=0
     right=len(array)-1
@@ -80,7 +80,7 @@ return -1
 
 
 def binary_search_practice2(array,target):
-    if array="":
+    if array=="":
         return "empty array"
     left = 0
     right=len(array)-1
@@ -112,3 +112,20 @@ def binary_search_practice_recursive1(array,target,left,right):
 def binary_search(array,target):
     return binary_search_practice_recursive1(array,target,0,len(array)-1)
         
+
+
+#practice attempt3
+def binary_search_practice3(arr,target):
+    if arr =="":
+        return "empty array"
+    left=0
+    right=len(arr)-1
+    while left<=right:
+        mid = (left+right)//2
+        if target==arr[mid]:
+            return mid
+        elif target>arr[mid]:
+            left = mid+1
+        else:
+            right=mid-1
+    return -1
