@@ -1,4 +1,4 @@
-#method 1
+#method 1#
 #The time complexity of binary search is O(logn)
 '''
 The space complexity depends on the implementation:
