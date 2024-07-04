@@ -1,3 +1,4 @@
+#
 '''
 Conditions for Checking a Rotated Sorted Array
 Count Break Points: Traverse the array and count the number of times the current element is greater than the next element.
