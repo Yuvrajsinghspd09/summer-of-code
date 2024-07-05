@@ -1,3 +1,4 @@
+#
 '''
 This algorithm runs in O(n) time complexity, where n is the number of customers, since we only iterate through the list once. 
 The space complexity is O(1) because we only use a constant amount of extra space for the counters.
