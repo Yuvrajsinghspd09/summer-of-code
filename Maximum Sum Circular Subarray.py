@@ -1,3 +1,21 @@
+'''
+To solve this problem, we need to consider two possible cases for the maximum subarray sum:
+
+Non-Circular Subarray: The maximum subarray does not wrap around, which can be found using Kadane's algorithm.
+Circular Subarray: The maximum subarray wraps around, which can be found by considering the minimum subarray sum and using the total sum of the array.
+Detailed Steps and Intuition
+Maximum Non-Circular Subarray Sum:
+
+This is the straightforward maximum subarray sum problem, which can be solved using Kadane's algorithm.
+Maximum Circular Subarray Sum:
+
+To find the maximum circular subarray sum, we can leverage the total sum of the array.
+If we subtract the minimum subarray sum from the total sum, we get the maximum circular subarray sum.
+Special Case Handling:
+
+If all elements in the array are negative, the result from the circular subarray logic can be misleading. In this case, we should return the result from the non-circular subarray sum calculation.
+
+'''
 
 class Solution:
     def maxSubarraySumCircular(self, nums: List[int]) -> int:
@@ -9,18 +27,27 @@ class Solution:
                 max_sum = max(max_sum, current_sum)
             return max_sum
 
-        total_sum = sum(nums)
+        # Step 1: Find the maximum subarray sum using Kadane's algorithm
         max_sum = kadane(nums)
-        
-        # Invert the array and find max sum (which is equivalent to finding min sum in original array)
+
+        # Step 2: Find the total sum of the array
+        total_sum = sum(nums)
+
+        # Step 3: Find the maximum subarray sum of the inverted array
         inverted_max_sum = kadane([-num for num in nums])
-        
-        # If all numbers are negative, return the max sum (which will be the largest negative number)
+
+        # Step 4: Handle the case when all elements are negative
         if max_sum < 0:
             return max_sum
         
-        # Otherwise, return the maximum of non-circular and circular sum
+        # Step 5: Return the maximum of non-circular and circular subarray sums
         return max(max_sum, total_sum + inverted_max_sum)
+
+# Example usage:
+solution = Solution()
+print(solution.maxSubarraySumCircular([5, -3, 5]))  # Output: 10
+print(solution.maxSubarraySumCircular([-3, -2, -1]))  # Output: -1
+
 
 
 
