@@ -1,3 +1,4 @@
+# approach 1 with O(n) time complexity   ,    For O(nlog(n)) scroll down
 def kadane_algorithm(nums):
     if not nums:
         return 0
@@ -33,9 +34,47 @@ When to Use Kadane's Algorithm :
 Maximum Subarray Problem: When you need to find the maximum sum of a contiguous subarray in an array of integers.
 Efficiently Solving Problems: When you need a linear time solution for finding maximum subarray sum.
 
-Related LeetCode Problems
+Related LeetCode Problems :
 Maximum Subarray - LeetCode #53
 Maximum Sum Circular Subarray - LeetCode #918
 Best Time to Buy and Sell Stock II - LeetCode #122
 Maximum Product Subarray - LeetCode #152 (a variation but related in approach)
 Minimum Subarray - LeetCode #862 (another variation involving the minimum subarray)
+
+
+# approach 2 
+
+from typing import List
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        def divide_and_conquer(left: int, right: int) -> int:
+            if left == right:
+                return nums[left]
+            
+            mid = (left + right) // 2
+            left_sum = divide_and_conquer(left, mid)
+            right_sum = divide_and_conquer(mid + 1, right)
+            cross_sum = find_cross_sum(left, mid, right)
+            
+            return max(left_sum, right_sum, cross_sum)
+        
+        def find_cross_sum(left: int, mid: int, right: int) -> int:
+            left_max = float('-inf')
+            current_sum = 0
+            for i in range(mid, left - 1, -1):
+                current_sum += nums[i]
+                left_max = max(left_max, current_sum)
+            
+            right_max = float('-inf')
+            current_sum = 0
+            for i in range(mid + 1, right + 1):
+                current_sum += nums[i]
+                right_max = max(right_max, current_sum)
+            
+            return left_max + right_max
+        
+        return divide_and_conquer(0, len(nums) - 1)
+
+
+
