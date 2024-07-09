@@ -1,0 +1,58 @@
+Intuition Behind the Sliding Window Algorithm
+The sliding window algorithm is a technique used for problems that involve processing a subset of data in a sequential manner. The "window" is a subset of the data structure (like an array or string) that "slides" across the data. The fixed-size sliding window specifically deals with windows of a constant size as it moves from the start to the end of the data structure.
+
+When to Use the Sliding Window Algorithm :
+Finding the maximum or minimum in subarrays of a fixed size.
+Calculating the sum or average of subarrays of a fixed size.
+Problems involving contiguous subarrays or substrings.
+
+How the Sliding Window Algorithm Works :
+Initialization: Start with a window of the given size at the beginning of the data structure.
+Processing: Calculate the desired result for the current window.
+Sliding: Move the window one element to the right, update the result by removing the effect of the element that is no longer in the window and adding the effect of the new element that has entered the window.
+Repeat: Continue the process until the window reaches the end of the data structure.
+
+
+Example Code
+Let's consider the problem of finding the maximum sum of any subarray of a fixed size k.
+
+Problem Statement
+Given an array of integers and an integer k, find the maximum sum of any contiguous subarray of size k.
+
+def max_sum_subarray(arr, k):
+    # Initialize variables
+    max_sum = 0
+    window_sum = 0
+
+    # Calculate the sum of the first window
+    for i in range(k):
+        window_sum += arr[i]
+
+    # Initialize the maximum sum as the sum of the first window
+    max_sum = window_sum
+
+    # Slide the window from start to end of the array
+    for i in range(k, len(arr)):
+        # Slide the window to the right
+        window_sum += arr[i] - arr[i - k]
+
+        # Update the maximum sum if the current window sum is greater
+        max_sum = max(max_sum, window_sum)
+
+    return max_sum
+
+# Example usage
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+k = 3
+print(max_sum_subarray(arr, k))  # Output: 24 (sum of subarray [7, 8, 9])
+
+
+LeetCode Problems Related to Sliding Window (Fixed Size)
+Here are some LeetCode problems that involve the fixed-size sliding window technique:
+
+LeetCode #643: Maximum Average Subarray I
+LeetCode #1004: Max Consecutive Ones III
+LeetCode #1343: Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold
+LeetCode #567: Permutation in String (sliding window with variable size, but related)
+LeetCode #438: Find All Anagrams in a String (sliding window with variable size, but related)
+LeetCode #1423: Maximum Points You Can Obtain from Cards
