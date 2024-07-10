@@ -123,7 +123,7 @@ Here are some LeetCode question numbers that involve the use of prefix sum:
 303 - Range Sum Query - Immutable
 304 - Range Sum Query 2D - Immutable
 560 - Subarray Sum Equals K
-724 - Find Pivot Index
+724 - Find Pivot Index = 1991 Find the Middle Index in Array
 1480 - Running Sum of 1d Array
 238 - Product of Array Except Self (variation using prefix and suffix products)
 523 - Continuous Subarray Sum
