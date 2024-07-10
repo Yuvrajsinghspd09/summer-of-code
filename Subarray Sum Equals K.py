@@ -3,18 +3,24 @@ from collections import defaultdict
 
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        count = defaultdict(int)
-        count[0] = 1
-        curr_sum = 0
-        total = 0
+        prefix_sum_counts = defaultdict(int)
+        prefix_sum_counts[0] = 1  # Initialize for subarrays starting from the beginning
+        
+        current_sum = 0
+        total_subarrays = 0
         
         for num in nums:
-            curr_sum += num
-            if curr_sum - k in count:
-                total += count[curr_sum - k]
-            count[curr_sum] += 1
+            current_sum += num
+            
+            # If there's a prefix sum that equals current_sum - k,
+            # it means we've found subarrays summing to k
+            if current_sum - k in prefix_sum_counts:
+                total_subarrays += prefix_sum_counts[current_sum - k]
+            
+            # Increment the count for the current prefix sum
+            prefix_sum_counts[current_sum] += 1
         
-        return total
+        return total_subarrays
 
 
 
