@@ -1,0 +1,62 @@
+Definition: A Trie is a tree-like data structure where each node represents a single character of a string. The paths from the root to the nodes represent prefixes of strings stored in the Trie.
+
+Properties:
+Each node typically contains links to child nodes, representing subsequent characters.
+Nodes may also contain additional metadata such as counts or flags to indicate the presence of complete words.
+
+Insertion Operation
+Inserting words into a Trie is a fundamental operation that involves creating a path in the Trie for each character of the word. Let's break down the insertion process:
+
+Starting from the Root:
+
+Begin at the root node of the Trie.
+Traversing Characters:
+
+For each character in the word:
+Check if the current node has a child node corresponding to the character.
+If yes, move to the child node.
+If no, create a new node and link it from the current node.
+
+Marking the End of a Word:
+Once all characters of the word are inserted:
+Mark the last node as isEnd=true to signify that a valid word ends at this node.
+
+Searching Operation :
+Searching in a Trie involves traversing through nodes to find if a specific word exists or to retrieve all words with a given prefix. Here’s how the searching operation works:
+
+Exact Word Search:
+Start from the root and traverse through nodes corresponding to each character of the word.
+If all characters are found and the last node is marked as isEnd=true, the word exists in the Trie.
+
+3. Prefix Search
+Prefix Search:
+
+Finding all words with a given prefix:
+Traverse the Trie until the end of the prefix.
+Perform a depth-first search (DFS) from that node to collect all words marked as isEnd=true.
+Example:
+
+Searching for prefix "app" returns ["apple", "apply"].
+
+4. Deletion (Optional)
+Deletion Operation:
+
+Deleting a word from a Trie involves:
+Marking the isEnd flag of the corresponding node to false.
+Removing nodes if they become unnecessary (e.g., no other words share the path).
+
+Example:
+
+Deleting "apple" from the Trie might remove nodes for "apple" but keep "apply" intact if it shares nodes.
+
+
+
+
+LeetCode Questions
+Here are some LeetCode problems related to Tries:
+
+208. Implement Trie (Prefix Tree)
+211. Design Add and Search Words Data Structure
+212. Word Search II
+648. Replace Words
+720. Longest Word in Dictionary
