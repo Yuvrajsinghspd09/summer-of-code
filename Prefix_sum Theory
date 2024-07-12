@@ -126,9 +126,9 @@ Here are some LeetCode question numbers that involve the use of prefix sum:
 724 - Find Pivot Index = 1991 Find the Middle Index in Array
 1480 - Running Sum of 1d Array
 238 - Product of Array Except Self (variation using prefix and suffix products)
-
 523 - Continuous Subarray Sum
 974 - Subarray Sums Divisible by K
+
 1031 - Maximum Sum of Two Non-Overlapping Subarrays
 1314 - Matrix Block Sum
 
