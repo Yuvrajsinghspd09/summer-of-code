@@ -1,0 +1,55 @@
+What is a Segment Tree?
+A Segment Tree is a binary tree used for storing intervals or segments. It allows querying which of the stored segments overlap with a given point or interval efficiently. It is particularly useful for answering range queries and updates on arrays in logarithmic time.
+
+Formation of a Segment Tree
+A Segment Tree is constructed by dividing the array into segments and storing these segments in a tree-like structure. Each node in the tree represents a segment of the array.
+
+Step-by-Step Construction of Segment Tree
+Leaf Nodes: Each leaf node represents a single element from the array.
+Internal Nodes: Each internal node represents the sum of its children nodes.
+
+Let's build the Segment Tree for the array:
+
+Start by placing the elements of the array in the leaf nodes of the tree.
+
+Leaf Nodes: [1, 3, 5, 7, 9, 11]
+
+Level 1:
+Node 1: Sum of arr[0] and arr[1] => 1 + 3 = 4
+Node 2: Sum of arr[2] and arr[3] => 5 + 7 = 12
+Node 3: Sum of arr[4] and arr[5] => 9 + 11 = 20
+
+         4        12       20
+       /  \     /   \    /   \
+     1     3   5     7  9    11
+
+Repeat the process for the next level until we reach the root of the tree.
+
+Level 2:
+Node 4: Sum of Node 1 and Node 2 => 4 + 12 = 16
+Node 5: Sum of Node 3 and itself (since it has no pair) => 20
+
+         16      20
+        /  \    /   \
+       4    12 20    -
+      / \   / \
+     1   3 5   7
+               / \
+              9  11
+
+The final tree is :
+
+                 36
+               /    \
+            16       20
+           /  \     /  \
+         4    12  16    11
+        / \  / \  / \   / \
+       1  3 5  7 9 11
+
+
+
+Operations :
+Range Sum Query: To find the sum of elements from index 𝑙 to r, traverse the tree and sum up the relevant nodes.
+
+Update: To update the value at index i, update the leaf node and then update its ancestors accordingly.
