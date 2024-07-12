@@ -1,0 +1,58 @@
+Theory
+Components of Union-Find
+Parent Array:
+
+parent[i] points to the parent of element i. If parent[i] == i, then i is the root of its set.
+Rank Array (or Size Array):
+
+rank[i] (or size[i]) helps keep the tree flat. It keeps track of the tree height (or size of the tree) to optimize the union operation.
+Union Operation
+Find Operation:
+
+Determines the root of the set to which an element belongs. With path compression, it flattens the structure by making each node on the path point directly to the root.
+Union by Rank (or Size):
+
+When performing a union, the root of the smaller tree (lower rank or size) is made a child of the root of the larger tree (higher rank or size). This keeps the tree height balanced, ensuring efficient operations.
+
+
+Union by Rank:
+
+def union(parent, rank, x, y):
+    rootX = find(parent, x)
+    rootY = find(parent, y)
+    if rootX != rootY:
+        if rank[rootX] > rank[rootY]:
+            parent[rootY] = rootX
+        elif rank[rootX] < rank[rootY]:
+            parent[rootX] = rootY
+        else:
+            parent[rootY] = rootX
+            rank[rootX] += 1
+
+
+Union by Size:
+
+def union(parent, size, x, y):
+    rootX = find(parent, x)
+    rootY = find(parent, y)
+    if rootX != rootY:
+        if size[rootX] > size[rootY]:
+            parent[rootY] = rootX
+            size[rootX] += size[rootY]
+        else:
+            parent[rootX] = rootY
+            size[rootY] += size[rootX]
+
+
+
+LeetCode Problems
+200. Number of Islands - Link
+323. Number of Connected Components in an Undirected Graph - Link
+547. Number of Provinces - Link
+684. Redundant Connection - Link
+721. Accounts Merge - Link
+959. Regions Cut By Slashes - Link
+990. Satisfiability of Equality Equations - Link
+1061. Lexicographically Smallest Equivalent String - Link
+1101. The Earliest Moment When Everyone Become Friends - Link
+1168. Optimize Water Distribution in a Village - Link
