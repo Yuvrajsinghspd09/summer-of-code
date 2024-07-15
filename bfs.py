@@ -78,7 +78,7 @@ def bfs(graph, start):
                 visited.add(neighbor)
 
 '''
-
+'''
 from collections import deque
 
 def bfs(graph, start):
@@ -94,3 +94,56 @@ def bfs(graph, start):
             if neighbor not in visited:
                 queue.append(neighbor)
                 visited.add(neighbor)
+'''
+
+'''
+#practice attempt 1
+def bfs(graph,start):
+    visited=set()
+    queue=deque([start])
+    visited.add(start)
+
+    while queue:
+        node=queue.popleft()
+        print(node,end='')
+
+        for neighbor in graph[start]:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
+
+
+'''
+
+'''
+#practice attempt 2
+
+def bfs(graph,start):
+    visited = set()
+    queue=deque([start])
+
+    while queue:
+        node = queue.popleft()
+        print(node,end='')
+
+        for neighbor in graph[start]:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
+                
+'''
+
+'''
+#practice attempt 3
+def bfs(graph,start):
+    visited=set()
+    queue=deque([start])
+    while queue:
+        node = queue.popleft()
+        print(node,end='')
+
+        for neighbor in graph[start]:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
+'''
