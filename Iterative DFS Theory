@@ -126,3 +126,18 @@ Visited: {'A', 'C', 'F', 'E', 'B', 'D'}
 Termination:
 
 Stack is empty, end of DFS.
+
+
+
+Here are the serial numbers of the LeetCode questions related to this concept:
+
+133
+200
+547
+694
+695
+733
+841
+1306
+1379
+490
