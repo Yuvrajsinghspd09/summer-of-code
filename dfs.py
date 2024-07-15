@@ -124,6 +124,7 @@ def dfs_recursive(graph,start,visited=None):
         visited = set()
 
         visited.add(start)
+        print(start, end=' ')  # Added this line to print visited nodes
         for neighbor in graph[start]:
             if neighbor not in visited:
                 dfs_recursive(graph,neighbor,visited)
