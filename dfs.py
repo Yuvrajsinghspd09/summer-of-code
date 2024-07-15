@@ -117,8 +117,18 @@ def stack_dfs(graph,start):
 
 '''
 ''' 
+# dfs practice attempt 1
 
+def dfs_recursive(graph,start,visited=None):
+    if visited is None:
+        visited = set()
 
+        visited.add(start)
+        for neighbor in graph[start]:
+            if neighbor not in visited:
+                dfs_recursive(graph,neighbor,visited)
+
+            
 
 
 
