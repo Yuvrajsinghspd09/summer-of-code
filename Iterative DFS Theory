@@ -1,0 +1,128 @@
+Why Iterative DFS?
+
+The recursive DFS uses the call stack, which can lead to stack overflow for very deep graphs.
+Iterative DFS uses an explicit stack, avoiding this problem and often being more practical for large graphs.
+
+Example Graph
+Consider the following graph:
+
+    A
+   / \
+  B   C
+ /   / \
+D   E   F
+
+The adjacency list for this graph is:
+
+{
+  'A': ['B', 'C'],
+  'B': ['D'],
+  'C': ['E', 'F'],
+  'D': [],
+  'E': [],
+  'F': []
+}
+
+
+Iterative DFS Algorithm:|
+
+Initialization:
+Create a stack and push the starting node (source) onto the stack.
+Create a set to keep track of visited nodes to avoid revisiting them.
+
+Process the stack:
+While the stack is not empty:
+Pop a node from the stack.
+If the node has not been visited:
+Mark it as visited (add it to the visited set).
+Push all its unvisited neighbors onto the stack.
+
+Implementation in Python:
+
+def iterative_dfs(graph, start_node):
+    # Initialize the stack with the start node
+    stack = [start_node]
+    # Set to keep track of visited nodes
+    visited = set()
+
+    while stack:
+        # Pop a node from the stack
+        current_node = stack.pop()
+
+        # If the node has not been visited
+        if current_node not in visited:
+            # Mark it as visited
+            print(f"Visiting: {current_node}")  # or perform any other action
+            visited.add(current_node)
+
+            # Push all unvisited neighbors to the stack
+            for neighbor in graph[current_node]:
+                if neighbor not in visited:
+                    stack.append(neighbor)
+
+# Example usage
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D'],
+    'C': ['E', 'F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+iterative_dfs(graph, 'A')
+
+
+
+Detailed Walkthrough
+Let's walk through the example step-by-step with the graph and starting node 'A':
+
+Initialization:
+
+Stack: ['A']
+Visited: {}
+First Iteration:
+
+Pop 'A' from the stack.
+Visit 'A', add to visited.
+Push 'B' and 'C' to the stack (neighbors of 'A').
+Stack: ['B', 'C']
+Visited: {'A'}
+Second Iteration:
+
+Pop 'C' from the stack.
+Visit 'C', add to visited.
+Push 'E' and 'F' to the stack (neighbors of 'C').
+Stack: ['B', 'E', 'F']
+Visited: {'A', 'C'}
+Third Iteration:
+
+Pop 'F' from the stack.
+Visit 'F', add to visited.
+'F' has no neighbors to push to the stack.
+Stack: ['B', 'E']
+Visited: {'A', 'C', 'F'}
+Fourth Iteration:
+
+Pop 'E' from the stack.
+Visit 'E', add to visited.
+'E' has no neighbors to push to the stack.
+Stack: ['B']
+Visited: {'A', 'C', 'F', 'E'}
+Fifth Iteration:
+
+Pop 'B' from the stack.
+Visit 'B', add to visited.
+Push 'D' to the stack (neighbor of 'B').
+Stack: ['D']
+Visited: {'A', 'C', 'F', 'E', 'B'}
+Sixth Iteration:
+
+Pop 'D' from the stack.
+Visit 'D', add to visited.
+'D' has no neighbors to push to the stack.
+Stack: []
+Visited: {'A', 'C', 'F', 'E', 'B', 'D'}
+Termination:
+
+Stack is empty, end of DFS.
