@@ -42,49 +42,55 @@ graph = {
 '''
 from collections import deque
 
-def dfs(graph,start):
-    visited=set()
-    queue= deque([start])
-    visited.add(start)
-
-    node= queue.popleft()
-    print(node, end=' ')
-    
-    for neighbor in graph[node]:  # Correct iteration over neighbors
-        if neighbor not in visited:
-            queue.append(neighbor)
-            visited.add(neighbor)
-
-'''
-'''
-from collections import deque
-
-
-def bfs1(graph,start):
-    visited=set()
-    queue= deque[start]
-    visited.add(start)
-
-    node = queue.popleft()
-    print(node,end='')
-
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            queue.append(neighbor)
-            visited.add(neighbor)
-
-'''
-
-from collections import deque
-
-def bfs(graph,start):
+def bfs(graph, start):
     visited = set()
-    queue = deque[start]
+    queue = deque([start])
+    visited.add(start)
+    
+    while queue:
+        node = queue.popleft()
+        print(node, end=' ')
+        
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
 
-    node = queue.popleft()
-    print(node,end='')
+'''
+'''
+from collections import deque
 
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            queue.append(neighbor)
-            visited.add(neighbor)
+
+from collections import deque
+
+def bfs(graph, start):
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+    
+    while queue:
+        node = queue.popleft()
+        print(node, end=' ')
+        
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
+
+'''
+
+from collections import deque
+
+def bfs(graph, start):
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+    
+    while queue:
+        node = queue.popleft()
+        print(node, end=' ')
+        
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
