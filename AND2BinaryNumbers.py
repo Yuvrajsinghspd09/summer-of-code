@@ -1,4 +1,4 @@
-#
+##
 def logical_AND(num1, num2):
     # Convert binary strings to integers
     int_num1 = int(num1, 2)
