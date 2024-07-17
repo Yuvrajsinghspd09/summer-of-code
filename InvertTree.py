@@ -1,4 +1,47 @@
 '''
+Iterative Approach Using a Queue
+Explanation:
+
+Initialize a Queue: Start with the root node in the queue.
+Iterate Through the Queue:
+Dequeue a node from the front of the queue.
+Swap its left and right children.
+Enqueue the non-null left and right children.
+Continue Until the Queue is Empty: Repeat the process until all nodes have been processed.
+
+'''
+
+# queue method, recursive approach below it
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def invertTreeIterative(root):
+    if not root:
+        return None
+    
+    queue = deque([root])
+    
+    while queue:
+        current = queue.popleft()
+        # Swap the left and right children
+        current.left, current.right = current.right, current.left
+        
+        # Add the children to the queue if they are not None
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
+    
+    return root
+
+
+
+'''
 Time Complexity: The time complexity of the invertTree method is O(n), where 
 
 n is the number of nodes in the tree. This is because each node is visited once, and for each node,
@@ -9,7 +52,7 @@ O(n). However, for balanced trees, the space complexity is typically
 O(logn) due to the depth of the recursion stack
 '''
 
-
+# recursive
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
