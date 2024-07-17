@@ -72,3 +72,24 @@ print("Postorder Traversal:", postorder_traversal(tree))
 Inorder Traversal: [4, 2, 5, 1, 6, 3, 7]
 Preorder Traversal: [1, 2, 4, 5, 3, 6, 7]
 Postorder Traversal: [4, 5, 2, 6, 7, 3, 1]
+
+
+
+
+#practice attempt 1
+class TreeNode:
+    def __init__(self, value=0, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def inorder_traversal(root):
+    result=[]
+    def traverse(node):
+        if node:
+            traverse(node.left)
+            result.append(node.val)
+            traverse(node.right)
+        traverse(root)
+    return result
+        
