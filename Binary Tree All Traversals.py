@@ -63,6 +63,11 @@ print("Preorder Traversal:", preorder_traversal(tree))
 print("Postorder Traversal:", postorder_traversal(tree))
 
 #output
+         1
+#       / \
+#      2   3
+#     / \ / \
+#    4  5 6  7
 
 Inorder Traversal: [4, 2, 5, 1, 6, 3, 7]
 Preorder Traversal: [1, 2, 4, 5, 3, 6, 7]
