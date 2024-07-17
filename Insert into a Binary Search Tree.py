@@ -26,8 +26,7 @@ def insert(root, key):
 
 
        
-       #ITERATIVE APPROACH
-
+#ITERATIVE APPROACH
 
 class Node:
     def __init__(self, key):
