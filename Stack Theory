@@ -1,0 +1,16 @@
+Applications of Stacks:
+
+Function Call Management: Managing function calls and recursion.
+Expression Evaluation: Parsing expressions, including infix, prefix, and postfix notation.
+Undo Mechanism: Implementing undo features in applications.
+Balanced Parentheses: Checking for balanced parentheses in expressions.
+Depth-First Search (DFS): Implementing DFS for graph traversal.
+Backtracking: Useful in algorithms like solving mazes, puzzles, and combinatorial problems.
+
+Tips and Tricks for Solving Stack-Based Problems:
+
+Use a Stack to Reverse Things: Since stacks are LIFO, they are perfect for reversing the order of elements.
+Balancing Symbols: Use a stack to ensure symbols (like parentheses, brackets) are balanced. Push opening symbols and pop when encountering closing symbols.
+Monotonic Stacks: These are stacks that maintain elements in a sorted order (increasing or decreasing). Useful in problems involving next/previous greater/smaller elements.
+State Management: Use a stack to manage states, especially in problems involving nested structures or depth-first traversal.
+Inorder/Preorder/Postorder Traversal: Implement tree traversal iteratively using stacks instead of recursion.
