@@ -16,3 +16,19 @@ def next_greater_element(arr):
 # Example usage
 arr = [4, 5, 2, 10, 8]
 print(next_greater_element(arr))  # Output: [5, 10, 10, -1, -1]
+
+
+#brute force
+def next_greater_element_brute(arr):
+    n = len(arr)
+    result = [-1] * n
+    for i in range(n):
+        for j in range(i + 1, n):
+            if arr[j] > arr[i]:
+                result[i] = arr[j]
+                break
+    return result
+
+# Example usage
+arr = [4, 5, 2, 10, 8]
+print(next_greater_element_brute(arr))  # Output: [5, 10, 10, -1, -1]
