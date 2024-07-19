@@ -14,3 +14,19 @@ def previous_smaller_element(arr):
 # Example usage
 arr = [4, 5, 2, 10, 8]
 print(previous_smaller_element(arr))  # Output: [-1, 4, -1, 2, 2]
+
+
+#brute force
+def previous_smaller_element_brute(arr):
+    n = len(arr)
+    result = [-1] * n
+    for i in range(n):
+        for j in range(i - 1, -1, -1):
+            if arr[j] < arr[i]:
+                result[i] = arr[j]
+                break
+    return result
+
+# Example usage
+arr = [4, 5, 2, 10, 8]
+print(previous_smaller_element_brute(arr))  # Output: [-1, 4, -1, 2, 2]
