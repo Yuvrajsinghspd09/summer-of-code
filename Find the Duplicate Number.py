@@ -1,4 +1,4 @@
-# optimal approach
+## optimal approach
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         # Phase 1: Finding the intersection point of the two runners
