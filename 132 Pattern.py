@@ -1,3 +1,4 @@
+
 #optimal 
 def find132pattern(nums):
     stack = []
