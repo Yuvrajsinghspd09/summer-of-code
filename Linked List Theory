@@ -1,0 +1,27 @@
+Tips and Tricks for LeetCode Questions:
+a. Two-Pointer Technique:
+
+Fast and slow pointers (Floyd's Cycle-Finding Algorithm)
+Use cases: Detecting cycles, finding middle element, finding nth node from the end
+
+b. Dummy Node:
+
+Create a dummy node at the start of the list
+Useful for operations that might change the head of the list
+
+c. Reverse a Linked List:
+
+An essential operation that comes up often
+Can be done iteratively or recursively
+
+d. Merge Two Sorted Lists:
+
+A fundamental operation for many problems
+Use a dummy node and iterate through both lists
+
+e. Recursive Approaches:
+
+Many linked list problems can be solved recursively
+Think about the base case and how to break down the problem
+
+
