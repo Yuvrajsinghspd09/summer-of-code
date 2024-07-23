@@ -25,3 +25,29 @@ Many linked list problems can be solved recursively
 Think about the base case and how to break down the problem
 
 
+
+
+
+Dummy Node Concept:
+A dummy node is a temporary node that we create and place at the beginning of the linked list.
+It doesn't hold any actual data from the list but serves as a placeholder. The main purpose of a dummy node is to simplify operations that might change the head of the list, making the code cleaner and reducing edge cases.
+Here's why it's useful:
+
+It provides a consistent starting point for operations.
+It eliminates the need for special cases when dealing with the head of the list.
+It makes insertion and deletion operations at the beginning of the list more straightforward.
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def use_dummy_node(head):
+    dummy = ListNode(0)  # Create a dummy node
+    dummy.next = head    # Connect it to the original list
+    
+    # Now you can perform operations starting from dummy.next
+    # ...
+    
+    return dummy.next  # Return the actual head of the modified list
