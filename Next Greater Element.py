@@ -32,3 +32,15 @@ def next_greater_element_brute(arr):
 # Example usage
 arr = [4, 5, 2, 10, 8]
 print(next_greater_element_brute(arr))  # Output: [5, 10, 10, -1, -1]
+
+#practice attempt 1
+def NGE(arr):
+    stack=[]
+    result=[-1]*len(arr)
+    for i in range(len(arr)):
+        if stack and arr[stack[-1]]<arr[i]:
+            index = stack.pop()
+            result[index] = arr[i]
+            
+        stack.append(i)
+    
