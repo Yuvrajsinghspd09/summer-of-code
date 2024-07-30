@@ -38,7 +38,7 @@ def NGE(arr):
     stack=[]
     result=[-1]*len(arr)
     for i in range(len(arr)):
-        if stack and arr[stack[-1]]<arr[i]:
+        whule stack and arr[stack[-1]]<arr[i]:
             index = stack.pop()
             result[index] = arr[i]
             
