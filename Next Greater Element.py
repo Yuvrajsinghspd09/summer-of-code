@@ -44,3 +44,4 @@ def NGE(arr):
             
         stack.append(i)
     
+    return result
