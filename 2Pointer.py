@@ -1,4 +1,3 @@
-
 # Notes for basic 2pointer implementation
 #Problem 1--> to find numbers which sum up to zero
 
