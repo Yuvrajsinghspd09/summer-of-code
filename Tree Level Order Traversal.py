@@ -5,7 +5,7 @@ n is the number of nodes in the tree. Each node is processed once, and for each 
 Space Complexity: The space complexity is also 
 O(n) in the worst case, where all nodes are stored in the queue simultaneously during the traversal.
 '''
-
+from collections import deque
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -16,24 +16,29 @@ class TreeNode:
 def levelOrder(root):
     if not root:
         return []
+    
     result = []
-    queue = [root]
+    queue = deque([root])
+    
     while queue:
         level = []
         for _ in range(len(queue)):
-            node = queue.pop(0)
+            node = queue.popleft()
             level.append(node.val)
             if node.left:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
         result.append(level)
+    
     return result
 
+# Create the binary tree
 root = TreeNode(23)
 root.left = TreeNode(39)
 root.right = TreeNode(230)
 root.right.left = TreeNode(156)
 root.right.right = TreeNode(37)
 
-print(levelOrder(root))  
+# Print the level order traversal
+print(levelOrder(root))
