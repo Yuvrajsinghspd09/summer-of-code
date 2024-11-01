@@ -37,3 +37,24 @@ class Solution:
                         right -= 1
         
         return quadruplets
+
+
+#practice attempt 1
+class Solution:
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        nums.sort()
+        result= set()
+        for i in range(len(nums)-3):
+            for j in range(i+1,len(nums)-2):
+                l=j+1
+                r=len(nums)-1
+                while l<r:
+                   total=nums[l]+nums[r]+nums[i]+nums[j]
+                   if total==target:
+                    result.add((nums[l],nums[r],nums[i],nums[j]))
+                   elif total<target:
+                    left+=1
+                   else:
+                    right-=1
+            return list(nums [for nums in result )
+                
