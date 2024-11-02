@@ -26,3 +26,24 @@ class Solution:
                 right-=1
                 boats+=1
         return boats
+
+
+#practice attempt 1
+class Solution:
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
+        people.sort()
+        n=len(people)
+        boats=0
+        l=0
+        r=n-1
+        while l<=r:
+            if people[l]+people[r]<= limit:
+                boats+=1
+                l+=1
+                r-=1
+            else:
+                boats+=1
+                r-=1
+    
+        return boats
+                
